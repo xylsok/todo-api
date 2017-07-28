@@ -68,6 +68,12 @@
             <artifactId>hystrix-core</artifactId>
             <version>1.5.2</version>
         </dependency>
+        <!-- dataSource-->
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
         <!--junit-->
         <dependency>
             <groupId>junit</groupId>
