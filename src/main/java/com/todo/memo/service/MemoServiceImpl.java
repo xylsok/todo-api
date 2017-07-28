@@ -36,4 +36,9 @@ public class MemoServiceImpl implements MemoService {
     public List<Memo> get() {
         return memoDao.getAll();
     }
+
+    @Override
+    public Memo detail(Integer id) {
+        return memoDao.findById(id);
+    }
 }

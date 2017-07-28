@@ -30,7 +30,7 @@ public class MemoDao extends JooqDao<MemoRecord, Memo, Integer> {
     }
 
     public List<Memo> getAll() {
-        Result<MemoRecord> fetch = create().selectFrom(MEMO_).where(MEMO_.DEL.eq(0)).orderBy(MEMO_.DEL.desc(), MEMO_.CREATE_TIME.asc()).fetch();
+        Result<MemoRecord> fetch = create().selectFrom(MEMO_).where(MEMO_.DEL.eq(0)).and(MEMO_.IS_FINISH.eq(0)).orderBy(MEMO_.DEL.desc(), MEMO_.CREATE_TIME.asc()).fetch();
         if (null != fetch) {
             return fetch.into(Memo.class);
         } else {

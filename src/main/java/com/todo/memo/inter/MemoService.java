@@ -14,4 +14,6 @@ public interface MemoService {
     void delete(Memo memo);
 
     List<Memo> get();
+
+    Memo detail(Integer id);
 }
