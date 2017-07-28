@@ -48,7 +48,7 @@ public class MemoWeb {
     }
 
     @ApiOperation(value = "查询已办", notes = "查询已办")
-    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    @RequestMapping(value = "/getfinish", method = RequestMethod.GET)
     public List<Memo> getFinish(@RequestParam("username")String username) {
         return memoService.getFinish(username);
     }
