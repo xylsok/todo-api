@@ -11,7 +11,7 @@ public interface MemoService {
     void add(Memo memo);
     void update(Memo memo);
 
-    void delete(Memo memo);
+    void delete(Integer id);
 
     List<Memo> get(String username);
 

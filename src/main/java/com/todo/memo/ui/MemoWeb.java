@@ -36,9 +36,9 @@ public class MemoWeb {
     }
 
     @ApiOperation(value = "删除", notes = "删除")
-    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
-    public void delete( @RequestBody Memo memo) {
-        memoService.delete(memo);
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable("id")Integer id) {
+        memoService.delete(id);
     }
 
     @ApiOperation(value = "查询", notes = "查询")

@@ -28,8 +28,8 @@ public class MemoServiceImpl implements MemoService {
     }
 
     @Override
-    public void delete(Memo memo) {
-        memoDao.deleteMemo(memo);
+    public void delete(Integer id) {
+        memoDao.deleteMemo(id);
     }
 
     @Override

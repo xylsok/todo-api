@@ -25,8 +25,8 @@ public class MemoDao extends JooqDao<MemoRecord, Memo, Integer> {
         return memo.getId();
     }
 
-    public void deleteMemo(Memo memo) {
-        create().update(MEMO_).set(MEMO_.DEL, 1).where(MEMO_.ID.eq(memo.getId())).execute();
+    public void deleteMemo(Integer id) {
+        create().update(MEMO_).set(MEMO_.DEL, 1).where(MEMO_.ID.eq(id)).execute();
     }
 
     public List<Memo> getAll(String username) {
