@@ -43,9 +43,16 @@ public class MemoWeb {
 
     @ApiOperation(value = "查询", notes = "查询")
     @RequestMapping(value = "/get", method = RequestMethod.GET)
-    public List<Memo> get() {
-        return memoService.get();
+    public List<Memo> get(@RequestParam("username")String username) {
+        return memoService.get(username);
     }
+
+    @ApiOperation(value = "查询已办", notes = "查询已办")
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    public List<Memo> getFinish(@RequestParam("username")String username) {
+        return memoService.getFinish(username);
+    }
+
     @ApiOperation(value = "查询一个", notes = "查询一个")
     @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     public Memo detail(@PathVariable("id")Integer id) {

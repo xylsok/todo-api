@@ -13,7 +13,9 @@ public interface MemoService {
 
     void delete(Memo memo);
 
-    List<Memo> get();
+    List<Memo> get(String username);
 
     Memo detail(Integer id);
+
+    List<Memo> getFinish(String username);
 }

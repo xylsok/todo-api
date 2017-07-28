@@ -33,12 +33,17 @@ public class MemoServiceImpl implements MemoService {
     }
 
     @Override
-    public List<Memo> get() {
-        return memoDao.getAll();
+    public List<Memo> get(String useranem) {
+        return memoDao.getAll(useranem);
     }
 
     @Override
     public Memo detail(Integer id) {
         return memoDao.findById(id);
+    }
+
+    @Override
+    public List<Memo> getFinish(String username) {
+        return memoDao.getFinish(username);
     }
 }

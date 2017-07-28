@@ -29,8 +29,17 @@ public class MemoDao extends JooqDao<MemoRecord, Memo, Integer> {
         create().update(MEMO_).set(MEMO_.DEL, 1).where(MEMO_.ID.eq(memo.getId())).execute();
     }
 
-    public List<Memo> getAll() {
-        Result<MemoRecord> fetch = create().selectFrom(MEMO_).where(MEMO_.DEL.eq(0)).and(MEMO_.IS_FINISH.eq(0)).orderBy(MEMO_.DEL.desc(), MEMO_.CREATE_TIME.asc()).fetch();
+    public List<Memo> getAll(String username) {
+        Result<MemoRecord> fetch = create().selectFrom(MEMO_).where(MEMO_.DEL.eq(0)).and(MEMO_.IS_FINISH.eq(0)).and(MEMO_.USER_NAME.eq(username)).orderBy(MEMO_.DEL.desc(), MEMO_.CREATE_TIME.asc()).fetch();
+        if (null != fetch) {
+            return fetch.into(Memo.class);
+        } else {
+            return null;
+        }
+    }
+
+    public List<Memo> getFinish(String username) {
+        Result<MemoRecord> fetch = create().selectFrom(MEMO_).where(MEMO_.DEL.eq(0)).and(MEMO_.IS_FINISH.eq(1)).and(MEMO_.USER_NAME.eq(username)).orderBy(MEMO_.DEL.desc(), MEMO_.CREATE_TIME.asc()).fetch();
         if (null != fetch) {
             return fetch.into(Memo.class);
         } else {
