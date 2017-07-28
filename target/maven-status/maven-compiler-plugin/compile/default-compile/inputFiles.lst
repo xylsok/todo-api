@@ -7,6 +7,7 @@
 /data/todo-api/src/main/java/com/todo/memo/dao/MemoDao.java
 /data/todo-api/target/generated-sources/jooq/com/todo/memo/Memo.java
 /data/todo-api/target/generated-sources/jooq/com/todo/memo/Tables.java
+/data/todo-api/src/main/java/com/todo/memo/model/User.java
 /data/todo-api/src/main/java/com/todo/memo/ui/MemoWeb.java
 /data/todo-api/target/generated-sources/jooq/com/todo/memo/tables/records/MemoRecord.java
 /data/todo-api/src/main/java/com/todo/memo/dao/JooqDao.java

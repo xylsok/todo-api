@@ -35,7 +35,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Memo extends TableImpl<MemoRecord> {
 
-    private static final long serialVersionUID = -1496516877;
+    private static final long serialVersionUID = -1689125574;
 
     /**
      * The reference instance of <code>memo.memo</code>
@@ -73,7 +73,7 @@ public class Memo extends TableImpl<MemoRecord> {
     /**
      * The column <code>memo.memo.is_finish</code>.
      */
-    public final TableField<MemoRecord, Integer> IS_FINISH = createField("is_finish", org.jooq.impl.SQLDataType.INTEGER, this, "");
+    public final TableField<MemoRecord, Integer> IS_FINISH = createField("is_finish", org.jooq.impl.SQLDataType.INTEGER.defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.INTEGER)), this, "");
 
     /**
      * The column <code>memo.memo.solution</code>.
@@ -99,6 +99,11 @@ public class Memo extends TableImpl<MemoRecord> {
      * The column <code>memo.memo.del</code>.
      */
     public final TableField<MemoRecord, Integer> DEL = createField("del", org.jooq.impl.SQLDataType.INTEGER.defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.INTEGER)), this, "");
+
+    /**
+     * The column <code>memo.memo.user_id</code>.
+     */
+    public final TableField<MemoRecord, Integer> USER_ID = createField("user_id", org.jooq.impl.SQLDataType.INTEGER, this, "");
 
     /**
      * Create a <code>memo.memo</code> table reference

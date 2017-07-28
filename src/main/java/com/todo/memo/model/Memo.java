@@ -19,4 +19,5 @@ public class Memo {
     private Date closeTime;
     private Integer level;
     private Integer del;
+    private Integer userId;
 }
