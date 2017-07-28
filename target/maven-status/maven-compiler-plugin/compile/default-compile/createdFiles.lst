@@ -1,0 +1,16 @@
+com/todo/memo/tables/records/MemoRecord.class
+com/todo/memo/Tables.class
+com/todo/memo/dao/MemoDao.class
+com/todo/memo/Keys$UniqueKeys0.class
+com/todo/memo/Keys.class
+com/todo/memo/Swagger2.class
+com/todo/memo/tables/Memo.class
+com/todo/memo/model/Memo.class
+com/todo/memo/DefaultCatalog.class
+com/todo/memo/dao/JooqDao.class
+com/todo/memo/Keys$Identities0.class
+com/todo/memo/Main.class
+com/todo/memo/service/MemoServiceImpl.class
+com/todo/memo/ui/MemoWeb.class
+com/todo/memo/Memo.class
+com/todo/memo/inter/MemoService.class
