@@ -138,7 +138,7 @@
                         <database>
                             <name>org.jooq.util.mysql.MySQLDatabase</name>
                             <inputSchema>${jdbc.db}</inputSchema>
-                            <includes>memo|user</includes>
+                            <includes>memo|user|note</includes>
                             <excludes/>
                         </database>
                         <target>
