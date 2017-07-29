@@ -16,8 +16,8 @@ import static com.todo.memo.Tables.NOTE;
  */
 @Component
 public class NoteDao extends JooqDao<NoteRecord, Note, Integer> {
-    protected NoteDao(Table<NoteRecord> table, Class<Note> type) {
-        super(table, type);
+    protected NoteDao() {
+        super(NOTE, Note.class);
     }
 
     @Override
@@ -26,7 +26,7 @@ public class NoteDao extends JooqDao<NoteRecord, Note, Integer> {
     }
 
     public List<Note> findByUserName(String username) {
-        Result<NoteRecord> fetch = create().selectFrom(com.todo.memo.tables.Note.NOTE).where(NOTE.USER_NAME.eq(username)).orderBy(NOTE.CREATE_TIME.desc()).fetch();
+        Result<NoteRecord> fetch = create().selectFrom(NOTE).where(NOTE.USER_NAME.eq(username)).orderBy(NOTE.CREATE_TIME.desc()).fetch();
         return null != fetch ? fetch.into(Note.class) : new ArrayList<>();
     }
 }
