@@ -1,13 +1,15 @@
 package com.todo.memo.dao;
 
 import com.todo.memo.model.Memo;
+
 import com.todo.memo.tables.records.MemoRecord;
 import org.jooq.Result;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-import static com.todo.memo.tables.Memo.MEMO_;
+import static com.todo.memo.Tables.MEMO_;
+
 
 /**
  * Created by zhangzf on 17/7/28.
