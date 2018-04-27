@@ -29,8 +29,14 @@ public class UserWeb {
 
     @ApiOperation(value = "添加", notes = "添加")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public void add(HttpServletRequest request, @RequestBody User user) {
-        userDao.save(user);
+    public Integer add(HttpServletRequest request, @RequestBody User user) {
+        Integer i = userDao.getUserByUsername2(user.getUserName());
+        if(i>0){
+            return 1;
+        }else {
+            userDao.save(user);
+            return 0;
+        }
     }
 
     @ApiOperation(value = "修改", notes = "修改")
