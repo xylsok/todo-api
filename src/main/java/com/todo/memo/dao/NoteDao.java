@@ -29,4 +29,8 @@ public class NoteDao extends JooqDao<NoteRecord, Note, Integer> {
         Result<NoteRecord> fetch = create().selectFrom(NOTE).where(NOTE.USER_NAME.eq(username)).orderBy(NOTE.CREATE_TIME.desc()).fetch();
         return null != fetch ? fetch.into(Note.class) : new ArrayList<>();
     }
+
+    public List<Note> findByUserName() {
+       return this.findAll();
+    }
 }

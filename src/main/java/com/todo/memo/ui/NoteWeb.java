@@ -47,6 +47,12 @@ public class NoteWeb {
         return noteDao.findByUserName(username);
     }
 
+    @ApiOperation(value = "查询所有", notes = "查询所有")
+    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    public List<Note> getAll() {
+        return noteDao.findByUserName();
+    }
+
 
 
 }
