@@ -21,4 +21,8 @@ public class Main {
         SpringApplication.run(Main.class, args);
     }
 
+    public void run(){
+        System.out.println("");
+    }
+
 }
