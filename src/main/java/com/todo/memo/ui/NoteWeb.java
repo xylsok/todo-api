@@ -8,6 +8,7 @@ import com.todo.memo.model.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +24,8 @@ import java.util.List;
 public class NoteWeb {
 
 
-    @Autowired
+    @Autowired(required = false)
+    @Qualifier(value = "")
     NoteDao noteDao;
 
     @ApiOperation(value = "添加", notes = "添加")
